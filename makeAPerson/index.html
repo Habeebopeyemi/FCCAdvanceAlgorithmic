@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>
+        let's make a person identity
+    </h1>
+
+    <script type="text/javascript">
+        let Person = function(firstAndLast) {
+            // Only change code below this line
+            let fullName = firstAndLast;
+
+            this.getFirstName = function() {
+                return fullName.split(" ")[0];
+            };
+
+            this.getLastName = function() {
+                return fullName.split(" ")[1];
+            };
+
+            this.getFullName = function() {
+                return fullName;
+            };
+
+            this.setFirstName = function(name) {
+                fullName = name + " " + fullName.split(" ")[1];
+            };
+
+            this.setLastName = function(name) {
+                // fullName = fullName.split(" ")[0] + " " + name;
+                fullName = `${fullName.split(" ")[0]} ${name}`
+            };
+
+            this.setFullName = function(name) {
+                fullName = name;
+            };                                                        
+        };
+
+        let bob = new Person('Bob Ross');
+        bob.getFullName();
+        console.log(bob.getFullName())
+        console.log(bob.getFirstName())
+        console.log(bob.getLastName())
+        console.log(bob.setFirstName("Haskell"))
+        console.log(bob.getFullName())
+        console.log(bob.setLastName("Alera"))
+        console.log(bob.getFullName())
+    </script>
+</body>
+</html>

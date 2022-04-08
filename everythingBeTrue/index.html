@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>All must contain it to be true challenge</h1>
+
+    <script type="text/javascript">
+        function truthCheck(collection, pre) {
+            return collection.every(function(element) {
+                return element.hasOwnProperty(pre) && Boolean(element[pre]);
+            });
+        }
+
+        let checkTruth = truthCheck([
+            {"user": "Tinky-Winky", "sex": "male"}, 
+            {"user": "Dipsy", "sex": "male"}, 
+            {"user": "Laa-Laa", "sex": "female"}, 
+            {"user": "Po", "sex": "female"},
+            {"user": "Po", "sex": ""}
+            ], "sex");
+        
+        console.log(checkTruth)
+    </script>
+</body>
+</html>
